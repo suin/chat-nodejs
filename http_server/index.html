@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Suin Chat Sample</title>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="jquery-1.7.1.min.js"></script>
+<script src="client.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="page-header">
+				<h1>Suin Chat <small>= Node.js + Socket.io + CoffeeScript + jQuery</small></h1>
+			</div>
+			<div id="loginBlock" class="row">
+				<div class="span10">
+					<div id="validationError" class="alert-message error" style="display:none;">
+						<p><strong>おっと！</strong> 入室するには、ハンドルネームを入力してください。</p>
+					</div>
+					<form style="text-align:center;">
+						<input type="text" name="name" class="xlarge" size="30" placeholder="ハンドルネーム" />
+						<input type="submit" class="btn small primary" value="入室する" />
+					</form>
+				</div>
+			</div>
+			<div id="messageBlock" class="row" style="display:none">
+				<div class="span10">
+					<form style="text-align:center;">
+						<input type="text" name="message" class="xlarge span8" placeholder="メッセージ" />
+						<input type="submit" class="btn small primary" value="発言する" />
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span10">
+					オンライン(<span id="onlineTotal"></span>) <span id="onlineUsers"></span>
+				</div>
+			</div>
+			<div id="messages">
+
+			</div>
+			<div class="row message" id="messageTemplate" style="display:none">
+				<div class="span2" name="">name</div>
+				<div class="span8" message="">message</div>
+			</div>
+			<div class="row">
+				<div class="span10">
+					<p style="font-size: 80%">* 会話ログデータやセッションは永続化してないので、リロードすると消えたり、ログアウトしてしまいます</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
