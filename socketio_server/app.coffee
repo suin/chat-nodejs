@@ -53,7 +53,7 @@ class Server
 		# ゲストからハンドルネームに名前変更
 		client = @clients.get(socket.id)
 		client.name = name
-		client.isGuest = true
+		client.isGuest = false
 		console.log('クライアントの状態', @clients.clients)
 
 		# 全員に知らせる (emitは本人だけ, broadcastは本人以外の全員)
@@ -72,7 +72,7 @@ class Server
 	
 		console.log('接続が切れました', client)
 
-		if client.isGuest is true
+		if client.isGuest is false
 			# ゲストでなければ、ログアウトを全員に知らせる
 			socket.emit('logout', client.name)
 			socket.broadcast.emit('logout', client.name)

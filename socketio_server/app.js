@@ -55,7 +55,7 @@ Server = (function() {
     console.log('ログインがありました', name);
     client = this.clients.get(socket.id);
     client.name = name;
-    client.isGuest = true;
+    client.isGuest = false;
     console.log('クライアントの状態', this.clients.clients);
     socket.emit('login', name);
     socket.broadcast.emit('login', name);
@@ -67,7 +67,7 @@ Server = (function() {
     var client;
     client = this.clients.get(socket.id);
     console.log('接続が切れました', client);
-    if (client.isGuest === true) {
+    if (client.isGuest === false) {
       socket.emit('logout', client.name);
       socket.broadcast.emit('logout', client.name);
       console.log('ログアウトを通知しました', client.name);
