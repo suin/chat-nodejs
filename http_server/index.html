@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <title>Suin Chat Sample</title>
-<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script src="jquery-1.7.1.min.js"></script>
-<script src="client.js"></script>
+<script>
+$.getScript('http://'+location.hostname+':3000/socket.io/socket.io.js', function(){
+	$.getScript('client.js');
+});
+</script>
+<!-- script src="http://localhost:3000/socket.io/socket.io.js"></script -->
+<!-- script src="client.js"></script -->
 <link rel="stylesheet" type="text/css" href="bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>

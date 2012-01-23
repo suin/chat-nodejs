@@ -146,7 +146,7 @@ class Socket
 # 実行処理
 jQuery -> 
 	app = new Application(
-		socketUrl: 'http://localhost:3000/' # Socket.ioサーバのURL
+		socketUrl: 'http://'+location.hostname+':3000/' # Socket.ioサーバのURL
 	)
 	app.run()
 

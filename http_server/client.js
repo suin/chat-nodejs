@@ -175,7 +175,7 @@ Socket = (function() {
 jQuery(function() {
   var app;
   app = new Application({
-    socketUrl: 'http://localhost:3000/'
+    socketUrl: 'http://' + location.hostname + ':3000/'
   });
   return app.run();
 });
